@@ -1,0 +1,14 @@
+diff --git a/hdk/cl/developer_designs/cl_firesim/build/scripts/create_dcp_from_cl.tcl b/hdk/cl/developer_designs/cl_firesim/build/scripts/create_dcp_from_cl.tcl
+index 7ce287d..1394cde 100644
+--- a/hdk/cl/developer_designs/cl_firesim/build/scripts/create_dcp_from_cl.tcl
++++ b/hdk/cl/developer_designs/cl_firesim/build/scripts/create_dcp_from_cl.tcl
+@@ -354,6 +354,9 @@ if {$implement} {
+    # Report final timing
+    report_timing_summary -file $CL_DIR/build/reports/${timestamp}.SH_CL_final_timing_summary.rpt
+ 
++   # Report power
++   report_power -file $CL_DIR/build/reports/${timestamp}.SH_CL_final_power.rpt
++
+    # Report utilization
+    report_utilization -hierarchical -hierarchical_percentages -file $CL_DIR/build/reports/${timestamp}.SH_CL_utilization.rpt
+ 
