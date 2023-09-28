@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+
+set timeout -1
+
+log_file expect_transcript.log
+
+set tmux_run [lindex $argv 0]
+set gem5_config [lindex $argv 1]
+set diskimg [lindex $argv 2]
+
+spawn tmux new-session -t $tmux_run
+expect "asokan-platsec-01"
+expect "$ "
+send "build/RISCV/gem5.opt $gem5_config --diskimg $diskimg\r"
+
+expect "Listening for connections on port "
+expect -re {\d+}
+set port_number $expect_out(0,string)
+
+set outfile1 [open "port_number" w+]
+puts $outfile1 "$port_number"

@@ -1,0 +1,49 @@
+#!/usr/bin/expect
+
+set timeout -1
+
+set port [lindex $argv 0]
+set run_cmd [lindex $argv 1]
+set cmd_prompt1 "root@UCanLinux"
+set cmd_prompt2 "#"
+set send_slow {10 .001}
+
+spawn telnet localhost $port
+expect "UCanLinux login:"
+send -s "root\r"
+expect "Password:"
+send -s "root\r"
+
+# send "\r"
+
+expect "$cmd_prompt1"
+expect "$cmd_prompt2"
+send -s "mount -o remount,rw /\r"
+
+expect "$cmd_prompt1"
+expect "$cmd_prompt2"
+send -s "chmod a+x $run_cmd\r"
+
+expect "$cmd_prompt1"
+expect "$cmd_prompt2"
+send -s "echo \"Switching gem5 CPUs\"\r"
+
+expect "$cmd_prompt1"
+expect "$cmd_prompt2"
+send -s "/sbin/m5 exit\r"
+
+expect "$cmd_prompt1"
+expect "$cmd_prompt2"
+send -s "echo \"Reset gem5 stats and run benchmark\"\r"
+
+expect "$cmd_prompt1"
+expect "$cmd_prompt2"
+send -s "/sbin/m5 exit\r"
+
+expect "$cmd_prompt1"
+expect "$cmd_prompt2"
+send -s "$run_cmd\r"
+
+expect "$cmd_prompt1"
+expect "$cmd_prompt2"
+send -s "/sbin/m5 exit\r"
