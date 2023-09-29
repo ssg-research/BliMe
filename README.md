@@ -7,8 +7,8 @@ BliMe is an architecture to realize efficient and secure outsourced computation.
 
 This repository contains three main parts:
 
-  - `firesim` contains a FireSim configuration that allows you to run a BliMe-enabled [BOOM](https://boom-core.org/) RISC-V core on an AWS F1 EC2 instance.
-  - `gem5` contains a modified [gemt](https://www.gem5.org/) simulator that allows you to simulate the performance impact of BliMe.
+  - `firesim` contains a [FireSim](https://fires.im/) configuration that allows you to run a BliMe-enabled [BOOM](https://boom-core.org/) RISC-V core on an AWS F1 EC2 instance.
+  - `gem5` contains a modified [gem5](https://www.gem5.org/) simulator that allows you to simulate the performance impact of BliMe.
   - `model` contains a model of BliMe's taint-tracking policy as applied to a model ISA, written in F*, along with a proof that this policy is secure from an information-flow point of view.
 
 For more details, see the [preprint](https://arxiv.org/abs/2204.09649) and the [project web page](https://ssg-research.github.io/blime/).
