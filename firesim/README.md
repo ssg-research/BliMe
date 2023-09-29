@@ -6,19 +6,18 @@ If you are using our provided AWS instance, please skip to step 4.
 
 1. Follow instructions at: https://docs.fires.im/en/1.16.0/Initial-Setup/Setting-up-your-Manager-Instance.html
 
-	- use "FPGA Developer AMI - 1.12.2-40257ab5-6688-4c95-97d1-e251a40fd1fc" instead of what's there
+	- use `FPGA Developer AMI - 1.12.2-40257ab5-6688-4c95-97d1-e251a40fd1fc` instead of what's there
 
 	- for step 8.2, instead of using the provided text, use the contents in: https://github.com/ssg-research/BliMe-firesim/blob/65b19133bf9a07c0bc211a54b3123b8e48f8d9d5/scripts/machine-launch-script.sh
 
-1. copy the "firesim.pem" key to the home directory at /home/centos
+1. copy the `firesim.pem` key to the home directory at `/home/centos`
 
-1. use mosh to login to instance, then clone the blinded-firesim repo and checkout the "1.16.0", "blinded-comp" or "blinded-multiclient" tag/branch *OR* copy corresponding "firesim" artifact folder to instance home directory
+1. use mosh to login to instance. Clone the `BliMe-firesim` repo and checkout `blinded-comp` or `blinded-multiclient` branch or the original `https://github.com/firesim/firesim` repo and checkout the `1.16.0` tag. Alternatively, fetch the submodules in this directory and copy the corresponding folder to the instance's home directory.
 
 	- if cloning the BliMe-firesim repo, clone it to a folder called "firesim" instead of the default "BliMe-firesim"
-	- for the "1.16.0" tag, the original GitHub repository can also be used since this is the baseline: https://github.com/firesim/firesim
-	- repeat all the following steps for the 3 branches to get results for the baseline, BliMe-BOOM-1 and BliMe-BOOM-8, respectively
+	- repeat all the following steps for the 3 branches (`1.16.0`, `blinded-comp`, `blinded-multiclient`) to get results for the baseline, BliMe-BOOM-1 and BliMe-BOOM-8, respectively. For each branch, delete the `/home/centos/firesim` directory if it exists and replace it with the new one.
 	
-1. in the firesim folder, run "./build-setup.sh"
+1. in the `firesim` folder, run `./build-setup.sh`
 
 	- enter "y" when asked about being on an unofficial branch
 
@@ -30,12 +29,12 @@ If you are using our provided AWS instance, please skip to step 4.
 	```
 	- when prompted, use the values in firesim.csv and your email
 
-1. copy the 3 config_*.yaml files from the root firesim folder to deploy/.
+1. copy the 3 `config_*.yaml` files from the root firesim folder to `deploy/`.
 
-1. run "firesim buildbitstream". This can take 4-6 hours to complete!
-	- when this completes, the power, timing and resource usage reports will be available in 'firesim/deploy/results-build/\<timestamp-config\>/\<design\>/build/reports/'. Continue the following steps ONLY if you would like to obtain the SPEC17 benchmark results (at much higher AWS costs)
-		- power & resource usage -> '.../build/\<timestamp\>.SH_CL_final_power.rpt' under "Total On-Chip Power" & "On-Chip Components"
-		- timing -> '.../build/\<timestamp\>.SH_CL_final_timing_summary.rpt' under "WNS(ns)"
+1. run `firesim buildbitstream`. This can take 4-6 hours to complete!
+	- when this completes, the power, timing and resource usage reports will be available in `firesim/deploy/results-build/\<timestamp-config\>/\<design\>/build/reports/`. Continue the following steps ONLY if you would like to obtain the SPEC17 benchmark results (at much higher AWS costs)
+		- power & resource usage -> `.../build/\<timestamp\>.SH_CL_final_power.rpt` under "Total On-Chip Power" & "On-Chip Components"
+		- timing -> `.../build/\<timestamp\>.SH_CL_final_timing_summary.rpt` under "WNS(ns)"
 	- when it's done (you'll get notified by email), copy the entry sent in the email to deploy/config_hwdb.yaml
 	- you can continue with the SPEC installation step below in a separate shell
 
@@ -51,7 +50,7 @@ If you are using our provided AWS instance, please skip to step 4.
 		```
 	- if this was done in a separate shell, you can now close it
 
-1. when "firesim buildbitstream" and the SPEC installation steps are both complete, run the following:
+1. when `firesim buildbitstream` and the SPEC installation steps are both complete, run the following:
 	```bash
 	export SPEC_DIR=/home/centos/cpu2017
 	cd ~/firesim/sw/firesim-software
@@ -68,7 +67,7 @@ If you are using our provided AWS instance, please skip to step 4.
 	firesim runworkload
 	```
 
-1. **IMPORTANT** once all the simulations are done, run "firesim terminaterunfarm" and enter "yes"
+1. **IMPORTANT** once all the simulations are done, run `firesim terminaterunfarm` and enter "yes"
 	- this terminates the f1 instances, which are the highest contributor to cost
 
-1. the benchmark results will be found in "deploy/results-workload/<timestamp>-spec17-intrate/results.csv"
+1. the benchmark results will be found in `deploy/results-workload/<timestamp>-spec17-intrate/results.csv`
