@@ -1,9 +1,6 @@
 [submodule "model"]
 	path = model
 	url = https://github.com/ssg-research/BliMe-model
-[submodule "gem5"]
-	path = gem5
-	url = https://github.com/ssg-research/BliMe-gem5
 [submodule "firesim/blime-boom-1"]
 	path = firesim/blime-boom-1
 	url = https://github.com/ssg-research/BliMe-firesim
