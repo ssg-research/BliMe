@@ -21,9 +21,9 @@
 	path = gem5/blime-gem5-opt
 	url = https://github.com/ssg-research/BliMe-gem5.git
 [submodule "gem5/gem5/blime-gem5-baseline"]
-	path = gem5/gem5/blime-gem5-baseline
+	path = gem5/blime-gem5-baseline
 	url = https://github.com/ssg-research/BliMe-gem5.git
 	branch = blinded_baseline
 [submodule "gem5/gem5/blime-gem5-experiments"]
-	path = gem5/gem5/blime-gem5-experiments
+	path = gem5/blime-gem5-experiments
 	url = https://github.com/ssg-research/BliMe-gem5-experiments.git
