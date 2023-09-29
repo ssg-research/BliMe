@@ -1,3 +1,8 @@
+BliMe FireSim simulations
+=========================
+
+This page describes how to build BliMe-BOOM-1 and BliMe-BOOM-8 using FireSim on AWS, and then run the SPEC CPU 2017 benchmarks on them. Power and resource usage overheads can be obtained after the build step (without needing to run SPEC).
+
 If you are using our provided AWS instance, please skip to step 4.
 
 1. Follow the steps in 1.1 and 1.2 to setup AWS account for first-time access: https://docs.fires.im/en/1.16.0/Initial-Setup/index.html

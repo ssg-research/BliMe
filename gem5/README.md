@@ -1,6 +1,8 @@
 BliMe gem5 simulations
 ======================
 
+This README describes the gem5 experiments for BliMe. The goal is to run SPEC CPU 2017 on gem5. Running all the benchmarks to completion is infeasibly long. Therefore, for each benchmark, we run 10B warm-up instructions and then run and measure the instructions per cycle (IPC) for the next 1B instructions. We spawn two tmux sessions per benchmark: one to run gem5, and one to run the benchmark inside gem5.
+
 Note: This entire experiment requires approximately 180GB of disk space.
 
 Install prerequisites:
