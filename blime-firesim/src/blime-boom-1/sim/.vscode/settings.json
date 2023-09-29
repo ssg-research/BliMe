@@ -1,7 +1,0 @@
-{
-  "files.watcherExclude": {
-    "**/target": true
-  },
-  "metals.bloopSbtAlreadyInstalled": true,
-  "metals.sbtScript": ".vscode/sbt-launch.sh"
-}

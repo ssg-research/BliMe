@@ -1,4 +1,0 @@
-# promote everything to output
-promote -severity warning
-promote -severity critical_warning
-promote -severity info

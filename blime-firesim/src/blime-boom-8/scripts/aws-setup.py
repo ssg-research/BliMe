@@ -1,1 +1,0 @@
-../deploy/awstools/aws_setup.py

@@ -1,4 +1,0 @@
-BasedOnStyle: LLVM
-AlwaysBreakTemplateDeclarations: Yes
-BinPackArguments: false
-BinPackParameters: false

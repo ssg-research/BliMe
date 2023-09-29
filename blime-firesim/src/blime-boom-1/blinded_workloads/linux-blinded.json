@@ -1,7 +1,0 @@
-{
-  "name" : "linux-blinded",
-  "base" : "br-base.json",
-  "overlay" : "overlay",
-  "outputs" : [ "/root/run_result.csv" ],
-  "run" : "runDemo.sh"
-}
