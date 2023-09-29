@@ -38,8 +38,8 @@ If you are using our provided AWS instance, please skip to step 4.
 
 1. run `firesim buildbitstream`. This can take 4-6 hours to complete!
 	- when this completes, the power, timing and resource usage reports will be available in `firesim/deploy/results-build/\<timestamp-config\>/\<design\>/build/reports/`. Continue the following steps ONLY if you would like to obtain the SPEC17 benchmark results (at much higher AWS costs)
-		- power & resource usage -> `.../build/\<timestamp\>.SH_CL_final_power.rpt` under "Total On-Chip Power" & "On-Chip Components"
-		- timing -> `.../build/\<timestamp\>.SH_CL_final_timing_summary.rpt` under "WNS(ns)"
+		- power & resource usage -> `.../reports/\<timestamp\>.SH_CL_final_power.rpt` under "Total On-Chip Power" & "On-Chip Components"
+		- timing -> `.../reports/\<timestamp\>.SH_CL_final_timing_summary.rpt` under "WNS(ns)"
 	- when it's done (you'll get notified by email), copy the entry sent in the email to deploy/config_hwdb.yaml
 	- you can continue with the SPEC installation step below in a separate shell
 
