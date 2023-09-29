@@ -47,5 +47,4 @@ Get results by running this in the 'benchmarks' folder of each experiment:
 find . -wholename '*/m5out/stats.txt' | xargs grep 'core.ipc'
 ```
 
-    This will print out the instructions per cycle (IPC) twice for each benchmark. The first value can be ignored since it corresponds to output before the benchmark is run. The second value is the one that should be used.
-
+This will print out the instructions per cycle (IPC) twice for each benchmark. The first value can be ignored since it corresponds to output before the benchmark is run. The second value is the one that should be used.
