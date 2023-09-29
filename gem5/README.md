@@ -8,7 +8,7 @@ Note: This entire experiment requires approximately 180GB of disk space.
 Install prerequisites:
 
 ```console
-$ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python-dev python
+$ sudo apt install build-essential git m4 scons zlib1g zlib1g-dev libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev python3-dev python3 expect
 ```
 
 Fetch submodules:
@@ -33,7 +33,7 @@ Run experiments:
 
 ```console 
 $ cd blime-gem5-experiments
-$ ./do_ucanlinux_experiment.sh ../blime-gem5-opt riscv-disk-mod-new.img run_ucanlinux.py mod
+$ ./do_ucanlinux_experiment.sh ../blime-gem5-opt riscv-disk-mod-new.img run_ucanlinux.py opt
 ```
 
 Once all benchmarks have been run (tmux sessions stop spawning), clear the terminal:
@@ -45,7 +45,7 @@ $ reset
 Repeat for `blime-gem5-unopt` and `blime-gem5-baseline`:
 
 ```console 
-$ ./do_ucanlinux_experiment.sh ../blime-gem5-unopt riscv-disk-mod-new.img run_ucanlinux-blinded-unopt.py base
+$ ./do_ucanlinux_experiment.sh ../blime-gem5-unopt riscv-disk-mod-new.img run_ucanlinux-blinded-unopt.py unopt
 $ ./do_ucanlinux_experiment.sh ../blime-gem5-baseline riscv-disk-mod-new.img run_ucanlinux.py base
 ```
 
