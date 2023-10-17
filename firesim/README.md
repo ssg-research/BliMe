@@ -17,10 +17,10 @@ If you are using our provided AWS instance, please skip to step 4.
 
 1. copy the `firesim.pem` key to the home directory at `/home/centos`
 
-1. use mosh to login to instance. Clone the `BliMe-firesim` repo and checkout `blinded-comp` or `blinded-multiclient` branch or the original `https://github.com/firesim/firesim` repo and checkout the `1.16.0` tag. Alternatively, fetch the submodules in this directory and copy the corresponding folder to the instance's home directory.
+1. use mosh to login to instance. Clone the `BliMe-firesim` repo and checkout the `blime-baseline`, `blinded-comp` or `blinded-multiclient` branch. Alternatively, fetch the submodules in this directory and copy the corresponding folder to the instance's home directory.
 
 	- if cloning the BliMe-firesim repo, clone it to a folder called "firesim" instead of the default "BliMe-firesim"
-	- repeat all the following steps for the 3 branches (`1.16.0`, `blinded-comp`, `blinded-multiclient`) to get results for the baseline, BliMe-BOOM-1 and BliMe-BOOM-8, respectively. For each branch, delete the `/home/centos/firesim` directory if it exists and replace it with the new one.
+	- repeat all the following steps for the 3 branches (`blime-baseline`, `blinded-comp`, `blinded-multiclient`) to get results for the baseline, BliMe-BOOM-1 and BliMe-BOOM-8, respectively. For each branch, delete the `/home/centos/firesim` directory if it exists and replace it with the new one.
 	
 1. in the `firesim` folder, run `./build-setup.sh`
 

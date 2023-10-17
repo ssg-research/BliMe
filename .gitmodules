@@ -12,7 +12,8 @@
 
 [submodule "firesim/baseline"]
 	path = firesim/baseline
-	url = https://github.com/firesim/firesim
+	url = https://github.com/ssg-research/BliMe-firesim
+	branch = blime-baseline
 [submodule "gem5/blime-gem5-unopt"]
 	path = gem5/blime-gem5-unopt
 	url = https://github.com/ssg-research/BliMe-gem5.git
