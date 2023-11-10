@@ -20,6 +20,8 @@ You can cite BliMe as
   author = {H ElAtali and L J Gunn and H Liljestrand and N Asokan},
   booktitle = {Network and Distributed Systems Symposium (NDSS)},
   location = {San Diego, CA, USA},
-  year = {2024}
+  year = {2024},
+  isbn = {1-891562-93-2},
+  doi = {10.14722/ndss.2024.24105}
 }
 ```
