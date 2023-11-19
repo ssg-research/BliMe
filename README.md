@@ -18,7 +18,7 @@ You can cite BliMe as
 @inproceedings{blime24,
   title = {BliMe: Verifiably Secure Outsourced Computation with Hardware-Enforced Taint Tracking},
   author = {H ElAtali and L J Gunn and H Liljestrand and N Asokan},
-  booktitle = {Network and Distributed Systems Symposium (NDSS)},
+  booktitle = {Network and Distributed System Security Symposium (NDSS)},
   location = {San Diego, CA, USA},
   year = {2024},
   isbn = {1-891562-93-2},
