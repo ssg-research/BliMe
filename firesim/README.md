@@ -1,7 +1,7 @@
 BliMe FireSim simulations
 =========================
 
-This page describes how to build BliMe-BOOM-1 and BliMe-BOOM-8 using FireSim on AWS, and then run the SPEC CPU 2017 benchmarks on them. Power and resource usage overheads can be obtained after the build step (without needing to run SPEC).
+This page describes how to build BliMe-BOOM-1 and BliMe-BOOM-8 using FireSim on AWS, and then run the SPEC CPU 2017 benchmarks on them. Power and resource usage overheads can be obtained after the build step (without needing to run SPEC). **Note that running the SPEC CPU 2017 benchmarks to completion on FireSim can cost around $5000 in AWS costs.**
 
 If you are using our provided AWS instance, please skip to step 4.
 
@@ -20,7 +20,8 @@ If you are using our provided AWS instance, please skip to step 4.
 1. use mosh to login to instance. Clone the `BliMe-firesim` repo and checkout the `blime-baseline`, `blinded-comp` or `blinded-multiclient` branch. Alternatively, fetch the submodules in this directory and copy the corresponding folder to the instance's home directory.
 
 	- if cloning the BliMe-firesim repo, clone it to a folder called "firesim" instead of the default "BliMe-firesim"
-	- repeat all the following steps for the 3 branches (`blime-baseline`, `blinded-comp`, `blinded-multiclient`) to get results for the baseline, BliMe-BOOM-1 and BliMe-BOOM-8, respectively. For each branch, delete the `/home/centos/firesim` directory if it exists and replace it with the new one.
+	- repeat all the following steps for the 3 branches (`blime-baseline`, `blinded-comp`, `blinded-multiclient`) to get results for the baseline, BliMe-BOOM-1 and BliMe-BOOM-8, respectively. For each branch, delete the `/home/centos/firesim` directory if it exists and replace it with the new one.	
+	- **Known Issue: do not recursively clone all submodules**. Use a shallow clone, e.g.: `git clone https://github.com/ssg-research/BliMe-firesim.git firesim`. The `build-setup.sh` script in the following step will fetch the appropriate submodules.
 	
 1. in the `firesim` folder, run `./build-setup.sh`
 
